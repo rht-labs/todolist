@@ -43,7 +43,7 @@ objects:
             name: '${NAME}'
         spec:
           containers:
-            - image: 'docker-registry.default.svc:5000/${NAMESPACE}/${NAME}:${APP_TAG}'
+            - image: '${DOCKER_REGISTRY}/${NAMESPACE}/${NAME}:${APP_TAG}'
               imagePullPolicy: Always
               name: '${NAME}'
               env:
@@ -113,6 +113,11 @@ parameters:
     displayName: Name
     description: The name assigned to all objects and the related imagestream.
     required: true
+  - name: DOCKER_REGISTRY
+    displayName: Docker Registry
+    description: The URL and Port for your internal Docker Registry
+    required: true
+    value: image-registry.openshift-image-registry.svc:5000
   - name: APP_TAG
     displayName: App Tag
     description: The tag of the image to use eg latest.
