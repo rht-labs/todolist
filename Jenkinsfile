@@ -14,6 +14,8 @@ pipeline {
         PIPELINES_NAMESPACE = "${NAMESPACE_PREFIX}-ci-cd"
         APP_NAME = "todolist"
 
+        DOCKER_REGISTRY = "image-registry.openshift-image-registry.svc:5000"
+
         JENKINS_TAG = "${JOB_NAME}.${BUILD_NUMBER}".replace("/", "-")
         JOB_NAME = "${JOB_NAME}".replace("/", "-")
 
@@ -161,7 +163,7 @@ pipeline {
                 echo '### set env vars and image for deployment ###'
                 sh '''
                     oc set env dc ${APP_NAME} NODE_ENV=${NODE_ENV}
-                    oc set image dc/${APP_NAME} ${APP_NAME}=docker-registry.default.svc:5000/${PROJECT_NAMESPACE}/${APP_NAME}:${JENKINS_TAG}
+                    oc set image dc/${APP_NAME} ${APP_NAME}=${DOCKER_REGISTRY}/${PROJECT_NAMESPACE}/${APP_NAME}:${JENKINS_TAG}
                     oc rollout latest dc/${APP_NAME}
                 '''
                 echo '### Verify OCP Deployment ###'
