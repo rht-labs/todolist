@@ -1,5 +1,6 @@
 # todolist
-API backend built in NodeJS using Express to add TODOs to a MongoDB. 
+API backend built in NodeJS using Express to add TODOs to a MongoDB.
+Front end for Todolist exposed on port 8080.
 
 ## Build and Run
 `npm run dev`
