@@ -2,6 +2,21 @@ apiVersion: v1
 entries:
   todolist:
   - apiVersion: v2
+    appVersion: 1.2.0
+    created: "2025-05-15T22:52:00.715014+01:00"
+    description: DO500 App - todolist Frontend
+    digest: acd6f85c5db86f93b3e17594790be992cb67d01ca68881e0a74c368843b1c296
+    home: https://petbattle.github.io/helm-charts
+    icon: https://avatars1.githubusercontent.com/u/68044996?s=200&v=4
+    maintainers:
+    - name: springdo
+    - name: eformat
+    name: todolist
+    type: application
+    urls:
+    - todolist-1.2.0.tgz
+    version: 1.2.0
+  - apiVersion: v2
     appVersion: 1.1.0
     created: "2022-09-22T23:43:52.266339+01:00"
     description: DO500 App - todolist Frontend
@@ -31,4 +46,4 @@ entries:
     urls:
     - todolist-1.0.1.tgz
     version: 1.0.1
-generated: "2022-09-22T23:43:52.265695+01:00"
+generated: "2025-05-15T22:52:00.7135+01:00"
